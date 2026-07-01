@@ -5,12 +5,12 @@ int main()
 {
     int imax,imin;
     const int n=30;
-    double error, y, x=0.5, h=1, emax =0.0, trueval = cos(x), emin = 1e9;
+    double error, y, x=0.5, h=1, emax =0.0, trueval = cos(x), emin = 1e9, h = 1;
     printf("s.no   h             y              error\n");
     printf("----------------------------------------------------------\n");
     for(int i=1; i<=n; ++i)
     {
-        double h = pow(0.25, i); //using h*=0.25 gives us roundoff errors
+        h *= 0.25; //using h*=0.25 gives us roundoff errors
         y = (sin(x+h) - sin(x))/h;
         error = fabs(trueval - y);
         printf("%d    %.2e   %.15lf  %.2e\n", i,h,y,error);
