@@ -1,9 +1,5 @@
 #include<stdio.h>
 #include<math.h>
-long double mypow(long double x, long n)
-{
-    return expl(n*logl(x));
-}
 int main()
 {
     long double e_true = exp(1.0),e, diff;
@@ -12,7 +8,7 @@ int main()
     for(int k = 1; k<=10;++k)
     {
         n *=8;
-        e = mypow(1.0+(1.0/n) , n);
+        e = pow(1.0+(1.0/n) , n);
         diff = e_true - e;
         if(e_true<e)
             diff *= -1;
