@@ -5,7 +5,7 @@ int main()
 {
     int imax,imin;
     const int n=30;
-    double error, y, x=0.5, h=1, emax =0.0, trueval = cos(x), emin = 1e9, h = 1;
+    double error, y, x=0.5, h=1, emax =0.0, trueval = cos(x), emin = 1e9;
     printf("s.no   h             y              error\n");
     printf("----------------------------------------------------------\n");
     for(int i=1; i<=n; ++i)
