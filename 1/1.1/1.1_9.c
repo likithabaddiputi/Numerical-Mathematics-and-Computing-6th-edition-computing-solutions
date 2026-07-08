@@ -9,17 +9,17 @@ void fn(double a,int n)
         b = i*a;
         a = b/i;
         if(i%100 == 0)
-            printf("a_%d = %.16e, error = %.16e\n", i,a,fabs(a_true - a));
+            printf("a_%d = %.25e, error = %.25e\n", i,a,fabs(a_true - a));
     }
     printf("\n");
 }
 int main()
 {
     const int n = 1000;
-    printf("Values when a = 1.2\n");
-    fn(1.2,n);
-    printf("\nValues when a = 1.756\n");
-    fn(1.756,n);
+    printf("Values when a = 1.875\n");
+    fn(1.875,n);
+    printf("\nValues when a = 0.5\n");
+    fn(0.5,n);
     printf("You can see here that when we give 1.756, it deviates from a_1, due to floating-point-round-off error(studied in chapter 2)\n");
     printf("\nSome values of a1 deviates from theoretical value, 10^20, 10^-12, 10^-8, 10^-4\n");
     fn(pow(10,20),n);
@@ -28,7 +28,5 @@ int main()
     fn(pow(10,-40),n);
     
     /* by substituting b_n in a_n expression, we get a_n = a_n-1. i.e, a_n = a1 */
-    //deviation of a_n from a_1 occurs when a_1 is too large or too small
+    //deviation of a_n from a_1 occurs when denominator of a_1 is not a power of 2
 }
-
-
