@@ -1,0 +1,5 @@
+pi=16*atan(sym(1)/5)-4*atan(sym(1)/239);
+disp(double(pi))
+digits(100)
+pi_100=16*atan(vpa(1)/5)-4*atan(vpa(1)/239);
+disp(pi_100)
