@@ -1,0 +1,15 @@
+syms x
+f=log(1+x);
+c=0;
+d0=f;
+d1=diff(f,x,1);
+d2=diff(f,x,2);
+d3=diff(f,x,3);
+d4=diff(f,x,4);
+d0_c=subs(d0,x,c);
+d1_c=subs(d1,x,c);
+d2_c=subs(d2,x,c);
+d3_c=subs(d3,x,c);
+d4_c=subs(d4,x,c);
+series=(d0_c/factorial(0))*(x-c)^0+(d1_c/factorial(1))*(x-c)^1+(d2_c/factorial(2))*(x-c)^2+(d3_c/factorial(3))*(x-c)^3+(d4_c/factorial(4))*(x-c)^4;
+disp(series)
