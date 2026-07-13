@@ -1,0 +1,5 @@
+syms x a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 a10
+p_x=a0+a1*x+a2*x^2+a3*x^3+a4*x^4+a5*x^5+a6*x^6+a7*x^7+a8*x^8+a9*x^9+a10*x^10;
+nested=a0+x*(a1+x*(a2+x*(a3+x*(a4+x*(a5+x*(a6+x*(a7+x*(a8+x*(a9+x*a10)))))))));
+difference=simplify(p_x-nested);
+disp(difference)
