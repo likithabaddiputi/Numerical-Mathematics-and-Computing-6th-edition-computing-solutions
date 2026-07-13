@@ -1,0 +1,19 @@
+x=-3:0.01:3;
+y=sin(x);
+s1=x;
+s2=x-(x.^3)/factorial(3);
+s3=x-(x.^3)/factorial(3)+(x.^5)/factorial(5);
+s4=x-(x.^3)/factorial(3)+(x.^5)/factorial(5)-(x.^7)/factorial(7);
+s5=x-(x.^3)/factorial(3)+(x.^5)/factorial(5)-(x.^7)/factorial(7)+(x.^9)/factorial(9);
+plot(x,y,'k','LineWidth',2);
+hold on
+plot(x,s1,'r');
+plot(x,s2,'b');
+plot(x,s3,'g');
+plot(x,s4,'m');
+plot(x,s5,'c');
+hold off
+xlim([-3,3]);
+ylim([-2,2]);
+grid on
+xlabel('x');
